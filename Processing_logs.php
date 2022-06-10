@@ -1,5 +1,5 @@
 <?php
-function processing_log (string $l){
+function processing_log (string $log){
     $answer = [
         'hits' => 0,
         'urls' => 0,
@@ -70,7 +70,7 @@ function processing_log (string $l){
     }
     return json_encode($answer);
 }
-$file = getopt('l::');
-$answer = processing_log ($file ['l']);
+$file = getopt('', array('log::'));
+$answer = processing_log ($file ['log']);
 echo ($answer);
 ?>
