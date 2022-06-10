@@ -1,7 +1,7 @@
 <?php
 function processing_log (string $l){
     $answer = [
-		'hits' => 0,
+        'hits' => 0,
 		'urls' => 0,
 		'traffic' => 0,
 		'all_line' => 0,
