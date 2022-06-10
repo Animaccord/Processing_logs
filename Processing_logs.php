@@ -1,6 +1,6 @@
 <?php
 function processing_log (string $l){
-	$answer = [
+    $answer = [
 		'hits' => 0,
 		'urls' => 0,
 		'traffic' => 0,
