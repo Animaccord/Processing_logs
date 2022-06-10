@@ -23,7 +23,7 @@ function processing_log (string $l){
 			if ($line = trim(fgets($open_file))) {
 				if (preg_match($pattern, $line, $matches)) {
 					list(
-                                              $line,
+                        $line,
                         $ip,
                         $a,
                         $b,
