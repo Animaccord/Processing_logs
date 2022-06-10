@@ -1,5 +1,5 @@
 <?php
-function processing_log (string $log){
+function processing_log (string $file){
     $answer = [
         'hits' => 0,
         'urls' => 0,
@@ -17,7 +17,7 @@ function processing_log (string $log){
     $answer_codes = [];
     $pattern = '/^([\S]+) (-) (-) (\[[\S]+) ([\S]+\]) "(.*) (.*) (.*)" ([0-9\-]{3}) ([0-9\-]+) "(.*)" "(.*)"$/';
     $search_pattern = "/Google|Mail|Rambler|Yandex/";
-    if ($open_file = fopen($l, 'r')) {
+    if ($open_file = fopen($file, 'r')) {
         $i = 1;
         while (!feof($open_file)) {
             if ($line = trim(fgets($open_file))) {
@@ -70,7 +70,7 @@ function processing_log (string $log){
     }
     return json_encode($answer);
 }
-$file = getopt('', array('log::'));
-$answer = processing_log ($file ['log']);
+$parameters = getopt('', array('file::'));
+$answer = processing_log ($parameters['file']);
 echo ($answer);
 ?>
